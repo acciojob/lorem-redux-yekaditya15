@@ -13,19 +13,12 @@ const App = () => {
 
   return (
     <div>
-      {/* Change intro text to match test's expected value */}
       <h1>A short Naration of Lorem Ipsum</h1>
       <h4>
         Below Contains A title and Body gotten from a random API, Please take
         your time to Review
       </h4>
-      {/* Loading state */}
-      {loading && <h4>Loading...</h4>}
 
-      {/* Error state */}
-      {error && <p>Error: {error}</p>}
-
-      {/* Display posts */}
       {data && Array.isArray(data) && (
         <ul>
           {data.map((post) => (
@@ -36,7 +29,8 @@ const App = () => {
                 {post.title}
               </p>
               <p className="body">
-                <h2>Body:</h2> {post.body}
+                <h2>Body :</h2>
+                {post.body}
               </p>
             </li>
           ))}
