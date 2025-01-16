@@ -1,4 +1,3 @@
-// src/redux/reducers.js
 import {
   FETCH_DATA_REQUEST,
   FETCH_DATA_SUCCESS,
@@ -7,7 +6,7 @@ import {
 
 const initialState = {
   loading: false,
-  data: "",
+  data: [],
   error: "",
 };
 

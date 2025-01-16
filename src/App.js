@@ -12,10 +12,23 @@ const App = () => {
 
   return (
     <div>
-      <h1>Lorem Ipsum Generator</h1>
-      {loading && <p>Loading...</p>}
+      <h1>A short Naration of Lorem Ipsum</h1>{" "}
+      {/* This matches the test expectation */}
+      {/* Loading state */}
+      {loading && <h4>Loading...</h4>}
+      {/* Error state */}
       {error && <p>Error: {error}</p>}
-      {data && <p>{data.text}</p>}
+      {/* Display posts */}
+      {data && Array.isArray(data) && (
+        <ul>
+          {data.map((post) => (
+            <li key={post.id}>
+              <strong>{post.title}</strong>
+              <p>{post.body}</p>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
