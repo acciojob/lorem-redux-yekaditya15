@@ -25,10 +25,11 @@ const App = () => {
       {/* Show error state if there is an error */}
       {error && <div className="error">Error: {error}</div>}
 
+      {/* Display the data */}
       {data && Array.isArray(data) && (
-        <div className="posts">
+        <ul>
           {data.map((post) => (
-            <div key={post.id} className="post">
+            <li key={post.id} className="post">
               {/* Display title and body in separate lines */}
               <p className="title">
                 <h2>Title :</h2>
@@ -38,9 +39,9 @@ const App = () => {
                 <h2>Body :</h2>
                 {post.body}
               </p>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       )}
     </div>
   );
