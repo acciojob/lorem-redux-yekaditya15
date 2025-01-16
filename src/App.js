@@ -12,12 +12,13 @@ const App = () => {
 
   return (
     <div>
-      {/* Change intro text to match test's expected value */}
+      {/* Intro text */}
       <h1>A short Naration of Lorem Ipsum</h1>
       <h4>
-        Below Contains A title and Body gotten froma random API, Please take
+        Below Contains A title and Body gotten from a random API, Please take
         your time to Review
       </h4>
+
       {/* Loading state */}
       {loading && <h4>Loading...</h4>}
 
@@ -29,15 +30,10 @@ const App = () => {
         <ul>
           {data.map((post) => (
             <li key={post.id}>
-              {/* Add class 'title' to the title element */}
-              <p className="title">
-                <h2>Title : </h2>
-                {post.title}
-              </p>
-              <p>
-                <h2>Body:</h2>
-                {post.body}
-              </p>
+              {/* Display the post title with a space after "Title :" */}
+              <h4 className="title">Title : {post.title}</h4>
+              {/* Display the post body */}
+              <h4>{post.body}</h4>
             </li>
           ))}
         </ul>
