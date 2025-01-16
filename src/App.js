@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchData } from "./redux/actions";
+import "./App.css"; // Assuming you will add the CSS in this file
 
 const App = () => {
   const dispatch = useDispatch();
@@ -12,13 +13,12 @@ const App = () => {
 
   return (
     <div>
-      {/* Intro text */}
+      {/* Change intro text to match test's expected value */}
       <h1>A short Naration of Lorem Ipsum</h1>
       <h4>
         Below Contains A title and Body gotten from a random API, Please take
         your time to Review
       </h4>
-
       {/* Loading state */}
       {loading && <h4>Loading...</h4>}
 
@@ -29,11 +29,15 @@ const App = () => {
       {data && Array.isArray(data) && (
         <ul>
           {data.map((post) => (
-            <li key={post.id}>
-              {/* Display the post title with a space after "Title :" */}
-              <h4 className="title">Title : {post.title}</h4>
-              {/* Display the post body */}
-              <h4>{post.body}</h4>
+            <li key={post.id} className="post">
+              {/* Display title and body in separate lines */}
+              <p className="title">
+                <h2>Title :</h2>
+                {post.title}
+              </p>
+              <p className="body">
+                <h2>Body:</h2> {post.body}
+              </p>
             </li>
           ))}
         </ul>
