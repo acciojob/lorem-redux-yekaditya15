@@ -1,0 +1,20 @@
+*{
+    font-family:'lato';
+    list-style:none
+  }
+  
+  
+  ul{
+    width:80%;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+  }
+  
+  li{
+    margin:10px;
+    padding:10px;
+    border-bottom:1px solid grey;
+    border-right:1px solid grey;
+  }
+  

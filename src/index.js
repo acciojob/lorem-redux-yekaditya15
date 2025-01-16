@@ -1,13 +1,14 @@
-import "@babel/polyfill"; // Add this line at the top
 import React from "react";
-import ReactDOM from "react-dom";
+import { render } from "react-dom";
+import Reducers from "./components/reducers.js";
+import PostValue from "./components/connect.js";
+import { createStore } from "redux";
 import { Provider } from "react-redux";
-import App from "./App";
-import store from "./redux/store";
 
-ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById("root")
-);
+
+const store = createStore(Reducers)
+//store.dispatch(UpdatePost({title:'hold',body:'my beer'}))
+console.log(store.getState())
+render(<Provider store={store}>
+        <PostValue />
+</Provider>, document.getElementById("root"))
