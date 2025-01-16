@@ -19,6 +19,13 @@ const App = () => {
         your time to Review
       </h4>
 
+      {/* Show loading state */}
+      {loading && <div className="loading">Loading...</div>}
+
+      {/* Show error state if there is an error */}
+      {error && <div className="error">Error: {error}</div>}
+
+      {/* Display the data */}
       {data && Array.isArray(data) && (
         <ul>
           {data.map((post) => (
