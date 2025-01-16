@@ -31,7 +31,7 @@ const App = () => {
             <li key={post.id}>
               {/* Add class 'title' to the title element */}
               <p className="title">
-                <h2>Title: </h2>
+                <h2>Title : </h2>
                 {post.title}
               </p>
               <p>
