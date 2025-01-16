@@ -19,17 +19,22 @@ const App = () => {
         your time to Review
       </h4>
 
-      {data && (
-        <div className="post">
-          <p className="title">
-            <h2>Title :</h2>
-            {data.title}
-          </p>
-          <p className="body">
-            <h2>Body :</h2>
-            {data.body}
-          </p>
-        </div>
+      {data && Array.isArray(data) && (
+        <ul>
+          {data.map((post) => (
+            <li key={post.id} className="post">
+              {/* Display title and body in separate lines */}
+              <p className="title">
+                <h2>Title :</h2>
+                {post.title}
+              </p>
+              <p className="body">
+                <h2>Body :</h2>
+                {post.body}
+              </p>
+            </li>
+          ))}
+        </ul>
       )}
     </div>
   );
